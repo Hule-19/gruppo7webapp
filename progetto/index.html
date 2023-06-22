@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sidebar</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="sidebar">
+    <ul>
+        <li>LOCALIT&Agrave</li>
+        <li class="località">
+            <select name="località" id="loc_all">
+                <option value="null"></option>
+                <option value="pastrengo">Pastrengo</option>
+                <option value="pescantina">Pescantina</option>
+                <option value="sommacampagna">Sommacampagna</option>
+                <option value="sona">Sona</option>
+                <option value="valeggio">Valeggio</option>
+                <option value="villafranca">Villafranca</option>
+                <option value="castelnuovo">Castelnuovo</option>
+                <option value="mozzecane">Mozzecane</option>
+
+            </select>
+        </li>
+        <li>SCOPO</li>
+        <li class="text_checkbox"><input type="radio" name="scopo" id="riposo">RIPOSO</li>
+        <li class="text_checkbox"><input type="radio" name="scopo" id="sport">SPORT</li>
+
+        <li id="altri_filtri_riposo" onclick = "altri_filtri()"><input type="checkbox"></li>
+        <li id="altri_filtri_sport" onclick = "altri_filtri()"><input type="checkbox"></li>
+
+        <script>
+            function altri_filtri(){
+                var checkBox_riposo = document.getElementById("riposo");
+                var checkBox_sport = document.getElementById("sport");
+                var altri_filtri_riposo = document.getElementById("altri_filtri_riposo");
+                var altri_filtri_sport = document.getElementById("altri_filtri_sport");
+                if (checkBox_riposo == true){
+                    altri_filtri_riposo.style.display = "block";
+                }else if (checkBox_sport == true){
+                    altri_filtri_sport.style.display = "block";
+                }else{
+                    altri_filtri_riposo.style.display = "none";
+                    altri_filtri_sport.style.display = "none";
+                }
+
+                
+
+            }
+        </script>
+
+    </ul>
+</div>
+<a class="btn"></a>
+
+<script type="text/javascript">
+    $('.btn').on('click',function () {
+        $('.btn').toggleClass('btnc');
+        $('.sidebar').toggleClass('side');
+
+    })
+</script>
+
+</body>
+</html>

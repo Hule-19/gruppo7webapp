@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+</head>
+<body>
+    <label>riposo: <input onclick="myfunction()" type="radio" name="scopo" id="scopo_riposo"></label>
+    <label>sport: <input onclick="myfunction()" type="radio" name="scopo" id="scopo_sport"></label>
+    <div id="checkbox_riposo" style="display:none">
+        <label>area riposo: <input type="checkbox" id="area_riposo"></label>
+        <label>pet friendly: <input type="checkbox" id="pet_friendly"></label>
+    </div>
+    <div id="checkbox_sport" style="display:none">
+        <label>campi sportivi: <input type="checkbox" id="area_riposo"></label>
+    </div>
+
+    <script>
+        function myfunction(){
+        let scopo_riposo = document.getElementById("scopo_riposo");
+        let altri_filtri_riposo = document.getElementById("checkbox_riposo");
+
+        let scopo_sport = document.getElementById("scopo_sport");
+        let altri_filtri_sport = document.getElementById("checkbox_sport");
+        if (scopo_riposo.checked){
+            altri_filtri_riposo.style.display = "block";
+        }else{
+            altri_filtri_riposo.style.display = "none";
+        } 
+        if (scopo_sport.checked){
+            altri_filtri_sport.style.display = "block";
+        }else{
+            altri_filtri_sport.style.display = "none";
+        }
+        
+        }
+    </script>
+
+</body>
+</html>
